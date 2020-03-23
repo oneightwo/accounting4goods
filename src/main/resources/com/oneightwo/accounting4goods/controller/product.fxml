@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oneightwo.accounting4goods.controller.Product">
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oneightwo.accounting4goods.controller.ProductController">
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
          <children>
@@ -66,12 +66,15 @@
                <font>
                   <Font size="16.0" />
                </font></Label>
-            <TextArea prefHeight="200.0" prefWidth="200.0" wrapText="true" />
+            <TextArea prefHeight="200.0" prefWidth="200.0" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font></TextArea>
          </children>
       </VBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="288.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
          <children>
-            <Button mnemonicParsing="false" text="Удалить">
+            <Button fx:id="btn" mnemonicParsing="false" text="Удалить">
                <font>
                   <Font size="16.0" />
                </font>

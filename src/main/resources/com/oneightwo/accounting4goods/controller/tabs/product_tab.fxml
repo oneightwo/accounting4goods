@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<Tab text="Продукты">
+    <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
+        <!--    </content>-->
+        <!--    <content>-->
+        <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0"
+              AnchorPane.topAnchor="10.0">
+            <children>
+                <ImageView id="product_img" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@/images/Br8QXIKBF3s.jpg"/>
+                    </image>
+                </ImageView>
+                <HBox alignment="TOP_CENTER" prefHeight="18.0" prefWidth="250.0">
+                    <children>
+                        <Button mnemonicParsing="false" text="Изенить">
+                            <HBox.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Button>
+                        <Button mnemonicParsing="false" text="Удалить">
+                            <HBox.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        <VBox prefHeight="380.0" prefWidth="442.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="270.0"
+              AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <children>
+                <Label id="Name" text="Название:">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+                <TextField id="product_name"/>
+                <Label text="Тип:">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+                <TextField/>
+                <Label text="Количество:">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+                <TextField/>
+                <Label text="Цена:">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+                <TextField/>
+                <Label text="Производитель:">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+                <TextField/>
+                <Label text="Описание:">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+                <TextArea prefHeight="200.0" prefWidth="200.0" wrapText="true">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </TextArea>
+            </children>
+        </VBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="288.0" AnchorPane.bottomAnchor="10.0"
+              AnchorPane.rightAnchor="10.0">
+            <children>
+                <Button id="btn" mnemonicParsing="false" text="Удалить">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                    </HBox.margin>
+                </Button>
+                <Button mnemonicParsing="false" text="Сохранить">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+    </content>
+</Tab>
