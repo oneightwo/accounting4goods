@@ -23,4 +23,19 @@ public class RoleServiceImpl implements RoleService {
     public Role getRoleByString(String role) {
         return roleRepository.getRoleByString(role);
     }
+
+    @Override
+    public Role save(Role role) {
+        return roleRepository.save(role);
+    }
+
+    @Override
+    public void delete(Role role) {
+        roleRepository.delete(role);
+    }
+
+    @Override
+    public Role update(Role role) {
+        return roleRepository.save(role);
+    }
 }

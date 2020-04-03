@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
 import net.rgielen.fxweaver.core.FxmlView;
 
 import java.io.IOException;
@@ -35,26 +34,24 @@ public class ProductListViewCell extends ListCell<Product> {
     protected void updateItem(Product product, boolean b) {
         super.updateItem(product, b);
         if (b || product == null) {
-//            System.out.println("null");
             setText(null);
             setGraphic(null);
         } else {
-//            System.out.println(product);
             mLLoader = new FXMLLoader(getClass().getResource("/com/oneightwo/accounting4goods/controller/listView/list_cell.fxml"));
             mLLoader.setController(this);
             try {
                 mLLoader.load();
+                name_l.setText(product.getName());
+                type_l.setText(product.getType().getName());
+                count_l.setText(product.getCount().toString());
+                price_l.setText(product.getPrice().toString());
+                setText(null);
+                setGraphic(container_gp);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            name_l.setText(product.getName());
-            type_l.setText(product.getType());
-            count_l.setText(product.getCount().toString());
-            price_l.setText(product.getPrice().toString());
-            setText(null);
-            setGraphic(container_gp);
-
         }
-
     }
+
+
 }

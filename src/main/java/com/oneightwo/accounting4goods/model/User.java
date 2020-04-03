@@ -31,6 +31,14 @@ public class User {
         this.role = role;
     }
 
+    public BigInteger getId() {
+        return id;
+    }
+
+    public void setId(BigInteger id) {
+        this.id = id;
+    }
+
     public String getSurname() {
         return surname;
     }
@@ -78,4 +86,6 @@ public class User {
     public void setRole(Role role) {
         this.role = role;
     }
+
+
 }

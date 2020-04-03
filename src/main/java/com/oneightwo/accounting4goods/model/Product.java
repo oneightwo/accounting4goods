@@ -1,9 +1,19 @@
 package com.oneightwo.accounting4goods.model;
 
+import javax.persistence.*;
+import java.math.BigInteger;
+
+@Entity
+@Table(name = "products")
 public class Product {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private BigInteger id;
     private String name;
-    private String type;
+    @JoinColumn(name = "type_id")
+    @ManyToOne(cascade = CascadeType.REFRESH)
+    private Type type;
     private String description;
     private Long count;
     private Double price;
@@ -12,13 +22,31 @@ public class Product {
     public Product() {
     }
 
-    public Product(String name, String type, String description, Long count, Double price, String manufacturer) {
+    public Product(String name, Type type, String description, Long count, Double price, String manufacturer) {
         this.name = name;
         this.type = type;
         this.description = description;
         this.count = count;
         this.price = price;
         this.manufacturer = manufacturer;
+    }
+
+    public Product(BigInteger id, String name, Type type, String description, Long count, Double price, String manufacturer) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.description = description;
+        this.count = count;
+        this.price = price;
+        this.manufacturer = manufacturer;
+    }
+
+    public BigInteger getId() {
+        return id;
+    }
+
+    public void setId(BigInteger id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -29,11 +57,11 @@ public class Product {
         this.name = name;
     }
 
-    public String getType() {
+    public Type getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Type type) {
         this.type = type;
     }
 

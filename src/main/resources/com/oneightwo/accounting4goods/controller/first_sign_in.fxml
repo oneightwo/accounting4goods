@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oneightwo.accounting4goods.controller.FirstSignInController">
+<AnchorPane fx:id="container_ap" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oneightwo.accounting4goods.controller.FirstSignInController">
    <children>
       <Label layoutX="83.0" layoutY="62.0" text="Добро пожаловать" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="25.0">
          <font>

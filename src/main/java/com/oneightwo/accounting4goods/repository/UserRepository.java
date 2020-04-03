@@ -27,5 +27,6 @@ public interface UserRepository extends JpaRepository<User, BigInteger> {
                                      @Param("name") String name,
                                      @Param("patronymic") String patronymic);
 
+    Optional<User> getUserByUsernameAndPassword(String username, String password);
 
 }

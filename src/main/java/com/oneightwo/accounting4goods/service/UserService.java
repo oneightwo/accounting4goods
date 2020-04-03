@@ -2,22 +2,15 @@ package com.oneightwo.accounting4goods.service;
 
 import com.oneightwo.accounting4goods.model.Role;
 import com.oneightwo.accounting4goods.model.User;
+import com.oneightwo.accounting4goods.service.basic.BasicService;
 
-import java.math.BigInteger;
-import java.util.List;
 import java.util.Optional;
 
-public interface UserService {
+public interface UserService extends BasicService<User> {
 
     Optional<User> getByUsername(String username);
 
-    List<User> getAll();
-
-    void delete(User user);
-
-    void save(User user);
-
-    void update(User user);
+    Optional<User> getByUsernameAndPassword(String username, String password);
 
     Optional<User> getUserByRole(Role role);
 

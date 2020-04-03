@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="218.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oneightwo.accounting4goods.controller.AddTypeController">
+   <children>
+      <Label layoutX="157.0" layoutY="34.0" text="Добавить тип продукта" AnchorPane.topAnchor="35.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="name_tf" layoutX="200.0" layoutY="89.0" promptText="Название..." AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Button fx:id="save_b" layoutX="471.0" layoutY="348.0" mnemonicParsing="false" text="Сохранить" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="25.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="cancel_b" mnemonicParsing="false" text="Отменить" AnchorPane.bottomAnchor="15.000000000000021" AnchorPane.rightAnchor="135.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

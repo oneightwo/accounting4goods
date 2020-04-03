@@ -3,69 +3,53 @@ package com.oneightwo.accounting4goods;
 import com.oneightwo.accounting4goods.constants.Constants;
 import com.oneightwo.accounting4goods.controller.FirstSignInController;
 import com.oneightwo.accounting4goods.controller.LoginController;
-import com.oneightwo.accounting4goods.controller.Node;
+import com.oneightwo.accounting4goods.controller.MainController;
 import com.oneightwo.accounting4goods.service.RoleService;
 import com.oneightwo.accounting4goods.service.UserService;
+import com.oneightwo.accounting4goods.service.impl.RoleServiceImpl;
+import com.oneightwo.accounting4goods.service.impl.UserServiceImpl;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxWeaver;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
 public class JavaFxApplication extends Application {
 
-    @Autowired
-    private UserService userService;
-
-    @Autowired
-    private RoleService roleService;
-
-    private ConfigurableApplicationContext applicationContext;
-
+    private ConfigurableApplicationContext context;
 
     @Override
-    public void init() {
-        String[] args = getParameters().getRaw().toArray(new String[0]);
-        this.applicationContext = new SpringApplicationBuilder()
+    public void init() throws Exception {
+        this.context = new SpringApplicationBuilder()
                 .sources(Accounting4GoodsApplication.class)
-                .run(args);
-
+                .run(getParameters().getRaw().toArray(new String[0]));
     }
 
-
-
     @Override
-    public void start(Stage stage) {
-        FxWeaver fxWeaver = applicationContext.getBean(FxWeaver.class);
-
+    public void start(Stage stage) throws Exception {
+        UserService userService = context.getBean(UserServiceImpl.class);
+        RoleService roleService = context.getBean(RoleServiceImpl.class);
+        FxWeaver fxWeaver = context.getBean(FxWeaver.class);
         Parent root;
-//        if (firstEntrance) {
-//            root = fxWeaver.loadView(LoginController.class);
-//        } else {
+        System.out.println(userService.getUserByRole(roleService.getRoleByString(Constants.ROLE_ADMIN)).isPresent());
+        if (userService.getUserByRole(roleService.getRoleByString(Constants.ROLE_ADMIN)).isPresent()) {
+//            root = fxWeaver.loadView(MainController.class);
+            root = fxWeaver.loadView(LoginController.class);
+//            root = fxWeaver.loadView(AddProductController.class);
+        } else {
             root = fxWeaver.loadView(FirstSignInController.class);
-//        }
-//        if (userService.getUserByRole(roleService.getRoleByString(Constants.ROLE_ADMIN)).isPresent()) {
-//             root = fxWeaver.loadView(LoginController.class);
-//        } else {
-//        root = fxWeaver.loadView(FirstSignInController.class);
-//        }
-//        System.out.println(roleService.getRoleByString(Constants.ROLE_ADMIN));
-//        System.out.println(userService.getUserByRole(roleService.getRoleByString(Constants.ROLE_ADMIN)).isPresent());
+        }
         Scene scene = new Scene(root);
-        stage.getIcons().add(new Image("/images/Br8QXIKBF3s.jpg"));
         stage.setScene(scene);
-        stage.centerOnScreen();
         stage.show();
     }
 
     @Override
-    public void stop() {
-        this.applicationContext.close();
+    public void stop() throws Exception {
+        this.context.close();
         Platform.exit();
     }
 

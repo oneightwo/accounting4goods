@@ -5,18 +5,15 @@ import com.oneightwo.accounting4goods.model.Role;
 import com.oneightwo.accounting4goods.model.User;
 import com.oneightwo.accounting4goods.service.RoleService;
 import com.oneightwo.accounting4goods.service.UserService;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -32,6 +29,9 @@ public class FirstSignInController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private FxWeaver fxWeaver;
 
     @FXML
     private Label label_registration_l;
@@ -78,18 +78,13 @@ public class FirstSignInController {
     @FXML
     private Button save_b;
 
-    private Role role;
 
-    @Autowired
-    FxWeaver fxWeaver;
+    private Role role;
 
     @FXML
     public void initialize() {
-
         init();
-//        System.out.println(roleService.getRoleByString(Constants.ROLE_ADMIN));
         save_b.addEventHandler(MouseEvent.MOUSE_CLICKED, (e -> {
-            fxWeaver.loadController(LoginController.class);
                     if (isСontainsUser()) {
                         showAlert();
                         clear();
@@ -98,13 +93,18 @@ public class FirstSignInController {
                             saveUser(role);
                             clear();
                             init();
+                        } else {
+                            showWarning();
                         }
                     }
                 })
         );
 
         finish_registration_b.addEventHandler(MouseEvent.MOUSE_CLICKED, (e -> {
-
+            Stage stage = (Stage) finish_registration_b.getScene().getWindow();
+            Parent parent = fxWeaver.loadView(LoginController.class);
+            stage.setScene(new Scene(parent));
+            stage.show();
         }));
     }
 
@@ -112,9 +112,11 @@ public class FirstSignInController {
         if (userService.getUserByRole(roleService.getRoleByString(Constants.ROLE_ADMIN)).isPresent()) {
             label_registration_l.setText(Constants.LABEL_ACCOUNT_WORKER);
             role = roleService.getRoleByString(Constants.ROLE_WORKER);
+            finish_registration_b.setVisible(true);
         } else {
             label_registration_l.setText(Constants.LABEL_ACCOUNT_ADMINISTRATOR);
             role = roleService.getRoleByString(Constants.ROLE_ADMIN);
+            finish_registration_b.setVisible(false);
         }
     }
 
@@ -157,5 +159,16 @@ public class FirstSignInController {
             }
         }
         return isValid;
+    }
+
+    private void showWarning() {
+        List<TextField> textFieldList = Arrays.asList(surname_tf, name_tf, patronymic_tf, login_tf);
+
+        for (TextField textField : textFieldList) {
+            if (textField.getText().length() < 2) {
+                textField.clear();
+                textField.setPromptText(Constants.MSG_MIN_LENGTH);
+            }
+        }
     }
 }

@@ -1,80 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oneightwo.accounting4goods.controller.MainController">
     <children>
-        <TabPane prefHeight="200.0" prefWidth="399.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="40.0" tabMinWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <TabPane fx:id="container_tp" prefHeight="200.0" prefWidth="399.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="40.0" tabMinWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <tabs>
-<!--                <fx:include source="/com/oneightwo/accounting4goods/controller/tabs/sale_tab.fxml"/>-->
-<!--                <fx:include source="/com/oneightwo/accounting4goods/controller/tabs/product_tab.fxml"/>-->
+                <!--                <fx:include source="/com/oneightwo/accounting4goods/controller/tabs/sale_tab.fxml"/>-->
+                <!--                <fx:include source="/com/oneightwo/accounting4goods/controller/tabs/product_tab.fxml"/>-->
                 <Tab text="Продажа">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <TextField promptText="Поиск..." AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="280.0" AnchorPane.topAnchor="10.0">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </TextField>
-                        <MenuButton alignment="CENTER" mnemonicParsing="false" prefWidth="150.0" text="Тип" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="10.0">
-                          <items>
-                            <MenuItem mnemonicParsing="false" text="Action 1" />
-                            <MenuItem mnemonicParsing="false" text="Action 2" />
-                          </items>
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </MenuButton>
-                        <Button mnemonicParsing="false" prefWidth="100.0" text="Поиск" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
-                           <font>
-                              <Font size="16.0" />
-                           </font></Button>
-                         <ListView fx:id="listView" layoutX="26.0" layoutY="86.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="60.0" />
-                     </children></AnchorPane>
+                       <fx:include fx:id="sale_tab_t" source="tabs/sale_tab.fxml" />
                     </content>
                 </Tab>
-                <Tab text="Товары">
+                <Tab fx:id="product_t" text="Товары">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                         <TextField promptText="Поиск..." AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="10.0">
-                             <font>
-                                 <Font size="16.0" />
-                             </font>
-                         </TextField>
-                         <MenuButton alignment="CENTER" mnemonicParsing="false" prefWidth="150.0" text="Тип" AnchorPane.rightAnchor="240.0" AnchorPane.topAnchor="10.0">
-                             <items>
-                                 <MenuItem mnemonicParsing="false" text="Action 1" />
-                                 <MenuItem mnemonicParsing="false" text="Action 2" />
-                             </items>
-                             <font>
-                                 <Font size="16.0" />
-                             </font>
-                         </MenuButton>
-                         <Button mnemonicParsing="false" prefWidth="100.0" text="Поиск" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="10.0">
-                             <font>
-                                 <Font size="16.0" />
-                             </font></Button>
-                        <ListView prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="60.0" />
-                        <Button layoutX="288.0" layoutY="233.0" mnemonicParsing="false" text="Создать" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
-                           <font>
-                              <Font size="16.0" />
-                           </font></Button>
-                     </children></AnchorPane>
+                        <fx:include fx:id="product_tab_t" source="tabs/product_tab.fxml" />
                     </content>
                 </Tab>
                 <Tab text="Отчеты">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        <fx:include fx:id="report_tab_t" source="tabs/report_tab.fxml"/>
                     </content>
+
                 </Tab>
-<!--                <fx:include source="/com/oneightwo/accounting4goods/controller/tabs/report_tab.fxml"/>-->
+                <!--                <fx:include source="/com/oneightwo/accounting4goods/controller/tabs/report_tab.fxml"/>-->
 
             </tabs>
         </TabPane>
-      <Button alignment="TOP_RIGHT" mnemonicParsing="false" text="Выход" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+        <Button fx:id="sign_out_b" alignment="TOP_RIGHT" mnemonicParsing="false" text="Выход" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
     </children>
 </AnchorPane>

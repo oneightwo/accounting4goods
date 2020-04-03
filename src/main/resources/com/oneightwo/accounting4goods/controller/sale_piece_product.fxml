@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="218.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oneightwo.accounting4goods.controller.SalePieceProduct">
+    <children>
+        <Label layoutX="214.0" layoutY="37.0" text="Продажа" AnchorPane.topAnchor="35.0">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <TextField fx:id="count_sale_tf" layoutX="200.0" layoutY="89.0" promptText="Количество..." AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="25.0">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </TextField>
+        <Button fx:id="save_b" layoutX="471.0" layoutY="348.0" mnemonicParsing="false" text="Сохранить" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="25.0">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="cancel_b" mnemonicParsing="false" text="Отменить" AnchorPane.bottomAnchor="15.000000000000021" AnchorPane.rightAnchor="135.0">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+      <Label fx:id="count_product_l" alignment="CENTER_RIGHT" layoutX="20.0" layoutY="95.0" prefHeight="27.0" prefWidth="220.0" text="Количество">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="242.0" layoutY="95.0" text="/">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+    </children>
+
+</AnchorPane>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oneightwo.accounting4goods.controller.ActionProductController">
+   <children>
+      <VBox prefHeight="380.0" prefWidth="442.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label id="Name" text="Название:">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <TextField id="product_name" fx:id="name_tf">
+               <font>
+                  <Font size="16.0" />
+               </font></TextField>
+            <Label text="Тип:">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <ComboBox fx:id="type_cb" maxWidth="350.0" />
+            <Button fx:id="add_type_b" mnemonicParsing="false" text="Добавить тип">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label text="Количество:">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <TextField fx:id="count_tf">
+               <font>
+                  <Font size="16.0" />
+               </font></TextField>
+            <Label text="Цена:">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <TextField fx:id="price_tf">
+               <font>
+                  <Font size="16.0" />
+               </font></TextField>
+            <Label text="Производитель:">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <TextField fx:id="manufacturer_еа">
+               <font>
+                  <Font size="16.0" />
+               </font></TextField>
+            <Label text="Описание:">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <TextArea fx:id="description_ta" wrapText="true">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="60.0" />
+               </VBox.margin></TextArea>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" prefHeight="50.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <children>
+            <Button fx:id="delete_b" mnemonicParsing="false" text="">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="save_b" mnemonicParsing="false" text="Сохранить">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Tab?>
-<Tab text="Отчеты">
-    <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-        <Button alignment="TOP_RIGHT" mnemonicParsing="false" text="Выховд" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
-    </content>
-</Tab>
+<?import javafx.scene.text.Font?>
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oneightwo.accounting4goods.controller.tabs.ReportTabController">
+    <children>
+        <PieChart fx:id="type_product_pc" title="Типы товаров" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+        <BarChart fx:id="sale_last_week_bc" title="Продажи за неделю" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <xAxis>
+                <CategoryAxis side="BOTTOM" fx:id="x_ca" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis fx:id="y_na" side="LEFT" />
+            </yAxis>
+        </BarChart>
+        <Button fx:id="generate_report_b" mnemonicParsing="false" text="Создать отчет" AnchorPane.bottomAnchor="10" AnchorPane.rightAnchor="10">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>
