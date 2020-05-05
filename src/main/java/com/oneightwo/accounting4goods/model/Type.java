@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.math.BigInteger;
 
 @Entity
-@Table(name = "types")
+@Table(name = "types", schema = "public")
 public class Type {
 
     @Id

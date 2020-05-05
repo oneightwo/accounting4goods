@@ -9,4 +9,6 @@ import java.util.Optional;
 public interface RoleService extends BasicService<Role> {
 
     Role getRoleByString(String role);
+
+    void baseInsert();
 }

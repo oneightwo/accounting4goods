@@ -21,12 +21,23 @@
                <font>
                   <Font size="16.0" />
                </font></Label>
-            <ComboBox fx:id="type_cb" maxWidth="350.0" />
-            <Button fx:id="add_type_b" mnemonicParsing="false" text="Добавить тип">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
+            <HBox prefHeight="10.0">
+               <children>
+                  <ComboBox fx:id="type_cb" maxWidth="350.0" prefWidth="300.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <Button fx:id="add_type_b" mnemonicParsing="false" text="Добавить тип">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
             <Label text="Количество:">
                <font>
                   <Font size="16.0" />

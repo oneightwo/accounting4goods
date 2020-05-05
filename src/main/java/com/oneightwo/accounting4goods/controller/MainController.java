@@ -10,10 +10,7 @@ import javafx.event.EventDispatchChain;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxWeaver;
@@ -42,6 +39,9 @@ public class MainController {
     private Tab product_t;
 
     @FXML
+    private Label fi;
+
+    @FXML
     private Button sign_out_b;
 
     @FXML
@@ -55,6 +55,7 @@ public class MainController {
 
     @FXML
     public void initialize() throws IOException {
+        fi.setText(activeUser.getActiveUser().getSurname() + " " + activeUser.getActiveUser().getName());
         if (activeUser.getActiveUserRole().equals(Constants.ROLE_WORKER)) {
             container_tp.getTabs().remove(product_t);
         }

@@ -6,6 +6,7 @@ import javax.persistence.Id;
 import java.math.BigInteger;
 import java.time.LocalDateTime;
 
+
 public class SalePiece {
 
     @Id

@@ -19,4 +19,8 @@ public class ActiveUser {
         return activeUser.getRole().getRole();
     }
 
+    public String getFullName() {
+        return activeUser.getSurname() + " " + activeUser.getName() + " " + activeUser.getPatronymic();
+    }
+
 }

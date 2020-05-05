@@ -1,6 +1,9 @@
 package com.oneightwo.accounting4goods.controller;
 
 import com.oneightwo.accounting4goods.constants.Constants;
+import com.oneightwo.accounting4goods.controller.tabs.ProductTabController;
+import com.oneightwo.accounting4goods.controller.tabs.ReportTabController;
+import com.oneightwo.accounting4goods.controller.tabs.SaleTabController;
 import com.oneightwo.accounting4goods.model.ActiveUser;
 import com.oneightwo.accounting4goods.model.Product;
 import com.oneightwo.accounting4goods.model.Sale;
@@ -37,6 +40,15 @@ public class SalePieceProduct {
 
     @Autowired
     private ActiveUser activeUser;
+
+    @Autowired
+    private ProductTabController productTabController;
+
+    @Autowired
+    private ReportTabController reportTabController;
+
+    @Autowired
+    private SaleTabController saleTabController;
 
     @FXML
     private TextField count_sale_tf;
@@ -79,6 +91,9 @@ public class SalePieceProduct {
     }
 
     private void close() {
+        productTabController.update();
+        saleTabController.update();
+        reportTabController.update();
         Stage stage = (Stage) save_b.getScene().getWindow();
         stage.close();
     }

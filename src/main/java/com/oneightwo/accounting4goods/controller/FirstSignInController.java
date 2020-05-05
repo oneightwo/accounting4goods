@@ -64,13 +64,13 @@ public class FirstSignInController {
     private Label password_first_l;
 
     @FXML
-    private TextField password_first_tf;
+    private PasswordField password_first_tf;
 
     @FXML
     private Label password_second_l;
 
     @FXML
-    private TextField password_second_tf;
+    private PasswordField password_second_tf;
 
     @FXML
     private Button finish_registration_b;

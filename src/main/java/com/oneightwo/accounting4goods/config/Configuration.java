@@ -16,14 +16,14 @@ public class Configuration {
         return new SpringFxWeaver(applicationContext);
     }
 
-    @Bean
-    public DataSource getDataSource() {
-        DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
-        dataSourceBuilder.driverClassName("org.postgresql.Driver");
-        dataSourceBuilder.url("jdbc:postgresql://localhost:5432/accounting4goods");
-        dataSourceBuilder.username("postgres");
-        dataSourceBuilder.password("lumia640");
-        return dataSourceBuilder.build();
-    }
+//    @Bean
+//    public DataSource getDataSource() {
+//        DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
+//        dataSourceBuilder.driverClassName("org.postgresql.Driver");
+//        dataSourceBuilder.url("jdbc:postgresql://localhost:5432/accounting4goods");
+//        dataSourceBuilder.username("postgres");
+//        dataSourceBuilder.password("lumia640");
+//        return dataSourceBuilder.build();
+//    }
 
 }

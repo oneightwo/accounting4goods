@@ -20,6 +20,7 @@ import org.springframework.stereotype.Component;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -81,11 +82,19 @@ public class ReportTabController {
     }
 
     private void getSaleLastWeek() {
-        List<String> dayOfWeek = List.of("Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье");
+        List<String> dayOfWeek = new ArrayList<>();
+        dayOfWeek.add("Понедельник");
+        dayOfWeek.add( "Вторник");
+        dayOfWeek.add("Среда");
+        dayOfWeek.add("Четверг");
+        dayOfWeek.add("Пятница");
+        dayOfWeek.add("Суббота");
+        dayOfWeek.add("Воскресенье");
         dataList = FXCollections.observableArrayList();
-        HashMap<String, Integer> result = new HashMap<>() {{
-            dayOfWeek.forEach(v -> put(v, 0));
-        }};
+        HashMap<String, Integer> result = new HashMap<>();
+        for (String s: dayOfWeek) {
+            result.put(s, 0);
+        }
         for (Sale sale : saleService.getSaleByUserOfLastWeek(activeUser.getActiveUser().getId())) {
             String curDay = dayOfWeek.get(sale.getDate().getDayOfWeek().getValue() - 1);
             result.put(curDay, result.get(curDay) + 1);
@@ -110,7 +119,7 @@ public class ReportTabController {
         Document document = new Document(PageSize.A4, 50, 50, 50, 50);
         try {
             PdfWriter writer = PdfWriter.getInstance(document,
-                    new FileOutputStream(javax.swing.filechooser.FileSystemView.getFileSystemView().getHomeDirectory() + "\\Report.pdf"));
+                    new FileOutputStream(javax.swing.filechooser.FileSystemView.getFileSystemView().getHomeDirectory() + "\\"+activeUser.getFullName()+".pdf"));
             document.open();
             BaseFont bf = BaseFont.createFont("c:/Windows/Fonts/arial.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED); //подключаем файл шрифта, который поддерживает кириллицу
             Font font = new Font(bf);

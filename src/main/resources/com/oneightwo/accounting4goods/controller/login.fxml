@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.PasswordField?>
 <VBox fx:id="container_vb" alignment="CENTER" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oneightwo.accounting4goods.controller.LoginController">
    <children>
       <Label layoutX="445.0" layoutY="184.0" text="Авторизация" AnchorPane.leftAnchor="445.0" AnchorPane.rightAnchor="445.0">
@@ -24,13 +25,13 @@
          <VBox.margin>
             <Insets bottom="10.0" />
          </VBox.margin></TextField>
-      <TextField fx:id="password_l" layoutX="425.0" layoutY="258.0" maxWidth="400.0" promptText="Пароль" AnchorPane.leftAnchor="425.0" AnchorPane.rightAnchor="425.0">
+      <PasswordField fx:id="password_l" layoutX="425.0" layoutY="258.0" maxWidth="400.0" promptText="Пароль" AnchorPane.leftAnchor="425.0" AnchorPane.rightAnchor="425.0">
          <font>
             <Font size="16.0" />
          </font>
          <VBox.margin>
             <Insets bottom="10.0" />
-         </VBox.margin></TextField>
+         </VBox.margin></PasswordField>
       <Button fx:id="sign_in_b" layoutX="473.0" layoutY="360.0" mnemonicParsing="false" text="Войти">
          <font>
             <Font size="16.0" />

@@ -7,10 +7,7 @@ import com.oneightwo.accounting4goods.service.UserService;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -43,7 +40,7 @@ public class LoginController {
     private TextField login_l;
 
     @FXML
-    private TextField password_l;
+    private PasswordField password_l;
 
     @FXML
     private Button sign_in_b;

@@ -38,4 +38,10 @@ public class RoleServiceImpl implements RoleService {
     public Role update(Role role) {
         return roleRepository.save(role);
     }
+
+    @Override
+    public void baseInsert() {
+        roleRepository.save(new Role("ADMIN"));
+        roleRepository.save(new Role("WORKER"));
+    }
 }

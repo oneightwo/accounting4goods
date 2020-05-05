@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oneightwo.accounting4goods.controller.MainController">
     <children>
@@ -22,7 +22,7 @@
                 </Tab>
                 <Tab text="Отчеты">
                     <content>
-                        <fx:include fx:id="report_tab_t" source="tabs/report_tab.fxml"/>
+                        <fx:include fx:id="report_tab_t" source="tabs/report_tab.fxml" />
                     </content>
 
                 </Tab>
@@ -31,5 +31,10 @@
             </tabs>
         </TabPane>
         <Button fx:id="sign_out_b" alignment="TOP_RIGHT" mnemonicParsing="false" text="Выход" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+      <Label fx:id="fi" alignment="CENTER_RIGHT" minWidth="250.0" text="ФИ" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="13.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>
