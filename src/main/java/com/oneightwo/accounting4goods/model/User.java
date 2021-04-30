@@ -6,7 +6,6 @@ import java.math.BigInteger;
 @Entity
 @Table(name = "users", schema = "public")
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private BigInteger id;
